@@ -1,0 +1,173 @@
+body{
+    background-color:bisque;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+header{
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: start;
+    /* font-size: 20px; */
+    background-color: cyan;
+}
+header h1{
+    font-size: 60px;
+    font-family: sans-serif;
+    margin-right: 50px;
+}
+header h3{
+    font-size: 30px;
+    /* font-family: sans-serif; */
+    margin-left: 50px;
+}
+nav{
+    text-align: left;
+    background-color: #3b3b3b;
+    padding: 5px;
+}
+nav ul li{
+    list-style: none;
+    /* text-decoration: none; */
+    display: inline-block;
+    text-align: left;
+    margin-left: 200px;
+    /* margin-right: 100px; */
+    padding: 10px;
+    transition: ease-in-out;
+    border-radius: 20px;
+    padding: 15px;
+    background-color:honeydew;
+}
+nav ul li:hover{
+    transform: scale(1.2);
+}
+nav ul a{
+    text-decoration: none;
+}
+#container{
+    padding: 20px;
+    background-color: azure;
+    display: flex;
+    border-radius: 25px;
+    /* align-items: center; */
+    gap: 20px;
+}
+#container p{
+    font-size: 22px;
+    align-items: center;
+    /* display: inline; */
+    background-color: cyan;
+    border-radius: 20px;
+    padding: 50px;
+}
+#container fieldset{
+    border-radius: 20px;
+    padding: 20px;
+    align-items: center;
+    font-size: 20px;
+    background-color:floralwhite;
+}
+fieldset form{
+    margin-top: 30px;
+    width: 600px;
+    height: 300px;
+    padding: 10px;
+    display: inline-block;
+}
+fieldset legend{
+    font-size: 25px;
+}
+fieldset label{
+    font-size: 20px;
+}
+fieldset a{
+    text-decoration: underline;
+}
+fieldset input{
+    border-radius: 20px;
+    height: 30px;
+    width: 260px;
+    text-align: center;
+}
+button{
+    display: inline;
+    width: 120px;
+    height: 33px;
+    border-radius: 20px;
+    font-size: 15px;
+}
+#checkbox{
+    height: auto;
+    width: auto;
+}
+b{
+    font-size: 35px;
+}
+fieldset a{
+    padding: 10px;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+fieldset b{
+    font-size: 19px;
+    background-color: aqua;
+    padding: 15px;
+    border-radius: 20px;
+    margin-right: 20px;
+    padding-right: 25px;
+}
+footer{
+    text-align: center;
+    background-color: darkslategray;
+}
+#footeritems{
+    padding: 20px;
+    align-items: center;
+}
+footer ul li{
+    list-style:none;
+    text-align: center;
+}
+footer img{
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    /* padding: 10px; */
+    object-fit: contain;
+}
+footer a{
+    /* font-size: 20px; */
+    transform: rotate(-5deg);
+    display: inline;
+}
+footer a:hover{
+    transition: ease-in-out;
+}
+#footeritems p{
+    font-size: 21px;
+    /* background-color: slategray; */
+    padding: 20px;
+    border-radius: 20px;
+    display: inline-block;
+}
+#footercontainer{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    background-color: slategray;
+    padding: 0%;
+}
+#footercontainer ul li{
+    font-size: 20px;
+    margin-bottom: 0px;
+    /* justify-content: left; */
+    text-align: start;
+    padding: 15px;
+    border-radius: 20px;
+    transition: ease-in-out 0.3s;
+}
+#footercontainer ul li:hover{
+    transform: scale(1.2);
+}
