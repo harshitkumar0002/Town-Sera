@@ -1,5 +1,5 @@
 body{
-    background-color:bisque;
+    background-color: #0E1726;
 }
 a{
     text-decoration: none;
@@ -7,13 +7,16 @@ a{
 }
 header{
     background-color: #f2f2f2;
-    padding: 20px;
-    text-align: start;
+    padding: 10px;
+    text-align: center;
     /* font-size: 20px; */
-    background-color: cyan;
+    background-color: #C6C9E7;
+    border-radius: 25px;
 }
 header h1{
+    text-align: center;
     font-size: 60px;
+    color: #546877;
     font-family: sans-serif;
     margin-right: 50px;
 }
@@ -25,7 +28,9 @@ header h3{
 nav{
     text-align: left;
     background-color: #3b3b3b;
-    padding: 5px;
+    /* padding: 5px; */
+    border-radius: 20px;
+    background-color: #D9D4CB;
 }
 nav ul li{
     list-style: none;
@@ -38,7 +43,6 @@ nav ul li{
     transition: ease-in-out 0.3s;
     border-radius: 20px;
     padding: 15px;
-    background-color:honeydew;
 }
 nav ul li:hover{
     transform: scale(1.2);
@@ -58,23 +62,28 @@ nav ul a{
     font-size: 22px;
     align-items: center;
     /* display: inline; */
-    background-color: cyan;
+    background-color: #FF7716;
     border-radius: 20px;
-    padding: 50px;
+    padding: 40px;
+    height: auto;
+    width: auto;
 }
 #container fieldset{
     border-radius: 20px;
-    padding: 20px;
+    /* padding: 20px; */
     align-items: center;
     font-size: 20px;
-    background-color:floralwhite;
+    background-color: #CFCFCA;
+    gap: 100px;
 }
 fieldset form{
+    text-align: left;
     margin-top: 30px;
-    width: 600px;
-    height: 300px;
     padding: 10px;
     display: inline-block;
+    min-height: 250px;
+    min-width: 350px;
+    margin-right: 200px;
 }
 fieldset legend{
     font-size: 25px;
@@ -83,6 +92,7 @@ fieldset label{
     font-size: 20px;
 }
 fieldset a{
+    text-align: left;
     text-decoration: underline;
 }
 fieldset input{
@@ -111,19 +121,19 @@ fieldset a{
     margin-right: 20px;
 }
 fieldset b{
-    font-size: 19px;
-    background-color: aqua;
-    padding: 15px;
+    font-size: 15px;
+    /* background-color: aqua; */
+    padding: 8px;
+    margin-bottom: 10px;
     border-radius: 20px;
-    margin-right: 20px;
-    padding-right: 25px;
 }
 footer{
     text-align: center;
-    background-color: darkslategray;
+    background-color:thistle;
+    border-radius: 30px;
 }
 #footeritems{
-    padding: 20px;
+    /* padding: 20px; */
     align-items: center;
 }
 footer ul li{
@@ -141,6 +151,7 @@ footer a{
     /* font-size: 20px; */
     transform: rotate(-5deg);
     display: inline;
+    margin-bottom: 20px;
 }
 footer a:hover{
     transition: ease-in-out;
@@ -148,7 +159,7 @@ footer a:hover{
 #footeritems p{
     font-size: 21px;
     /* background-color: slategray; */
-    padding: 20px;
+    /* padding: 20px; */
     border-radius: 20px;
     display: inline-block;
 }
@@ -171,3 +182,80 @@ footer a:hover{
 #footercontainer ul li:hover{
     transform: scale(1.2);
 }
+#mainp01{
+    font-size: 20px;
+    color: #546877;
+    background-color: #f2f2f2;
+    border-radius: 25px;
+    padding: 80px;
+}
+#mainp01 b{
+    color: #FF7716;
+    text-decoration: underline #FF7716;
+}
+#maindivpul02 b{
+    display: inline-block;
+    font-size: 20px;
+    color: #0E1726;
+    background-color: #FF7716;
+    border-radius: 25px;
+    padding: 25px;
+    text-decoration: underline #FF7716;
+}
+#maindivpul02 strong{
+    color: #FF7716;
+}
+#maindivpul02 p{
+    color:#FF7716;
+    /* background-color: #546877; */
+    border-radius: 20px;
+    text-align: left;
+    /* padding: 20px; */
+    font-size: 21px;
+}
+#devparab{
+    display: inline-block;
+    font-size: 21px;
+    color: #0E1726;
+    background-color: #FF7716;
+    border-radius: 25px;
+    /* text-decoration: underline; */
+    padding: 25px;
+}
+#strongpara{
+    display: block;
+    font-size: 20px;
+    color: #546877;
+    background-color: #f2f2f2;
+    border-radius: 25px;
+    padding: 25px;
+}
+#strongpara strong{
+    color: #546877;
+    /* padding: 10px; */
+    font-size: 21px;
+    border-radius: 20px;
+    /* margin-left: 20px; */
+    text-align: left;
+    text-wrap: bold;
+    /* background-color: #0E1726; */
+}
+#strongpara a{
+    color: #FF7716;
+    background-color: #0E1726;
+    padding: 10px;
+    border-radius: 20px;
+    transition: ease-in-out;
+}
+#circle{
+    background-color: #FF7716;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+}
+/* #strongpara b{
+    color: #0E1726;
+    background-color: #FF7716;
+    text-decoration: underline #FF7716;
+} */
