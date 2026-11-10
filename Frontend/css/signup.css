@@ -64,7 +64,8 @@ fieldset input{
     text-align: center;
 }
 fieldset label{
-    background-color: #C6C9E7;
+    /* background-color: #C6C9E7; */
+    color: #FF7716;
     padding: 15px;
     border-radius: 20px;
 }
