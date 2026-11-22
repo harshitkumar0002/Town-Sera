@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Log in to Town-Sera with your mobile number and a one-time password.">
+    <title>Mobile Login | Town-Sera</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile-login.css">
+</head>
+<body>
+    <header>
+        <div id="headeritems">
+            <p>Mobile Login | Town-Sera</p>
+            <p id="itemcopyright">&copy; Town-Sera 2026</p>
+        </div>
+        <div id="headts">
+            <h1>Town-Sera</h1>
+            <h3>Manage Documents with Ease...</h3>
+        </div>
+    </header>
+
+    <main>
+        <section id="mobilewrap">
+            <a class="backlink" href="../index.html">&larr; Back to login</a>
+
+            <fieldset id="mobilecard">
+                <legend>Mobile Login</legend>
+
+                <!-- STEP 1: phone number -->
+                <form id="phoneform" class="step active" novalidate>
+                    <h2>Welcome back</h2>
+                    <p class="sub">Enter your mobile number and we'll send you a one-time password (OTP).</p>
+
+                    <label class="formlabel" for="phone">Mobile number</label>
+                    <div class="phone-field">
+                        <span class="cc">+91</span>
+                        <input type="tel" id="phone" name="phone" inputmode="numeric" maxlength="10"
+                               placeholder="10-digit mobile number" autocomplete="tel-national" required>
+                    </div>
+                    <p class="error" id="phoneerror" role="alert"></p>
+
+                    <label id="checkbox" class="agree">
+                        <input type="checkbox" id="agree"> I agree to receive an OTP by SMS
+                    </label>
+
+                    <button type="submit" class="primary">Send OTP</button>
+                </form>
+
+                <!-- STEP 2: OTP -->
+                <form id="otpform" class="step" novalidate>
+                    <h2>Verify OTP</h2>
+                    <p class="sub">Enter the 6-digit code sent to <strong id="sentto">+91 XXXXXXXXXX</strong>
+                        <button type="button" class="linkbtn" id="changenum">Change</button></p>
+
+                    <div class="otp-boxes" id="otpboxes">
+                        <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 1" autocomplete="one-time-code">
+                        <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 2">
+                        <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 3">
+                        <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 4">
+                        <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 5">
+                        <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 6">
+                    </div>
+                    <p class="error" id="otperror" role="alert"></p>
+
+                    <button type="submit" class="primary">Verify &amp; Log In</button>
+
+                    <p class="resend">
+                        <span id="timertext">Resend OTP in <b id="timer">30</b>s</span>
+                        <button type="button" class="linkbtn" id="resend" hidden>Resend OTP</button>
+                    </p>
+                </form>
+
+                <!-- STEP 3: success -->
+                <div id="success" class="step">
+                    <div class="tick">&#10003;</div>
+                    <h2>You're logged in!</h2>
+                    <p class="sub">Redirecting to your dashboard...</p>
+                </div>
+
+                <p class="signup-note">Prefer a password? <a class="inline-link" href="../index.html">Log in with username</a></p>
+            </fieldset>
+        </section>
+    </main>
+
+    <footer>
+        <p>Discover for More</p>
+        <div id="footermenu">
+            <ul>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="reportus.html">Report Us</a></li>
+            </ul>
+            <ul>
+                <li><a href="https://github.com/harshitverma21180002-gif" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="#">X / Twitter</a></li>
+                <li><a href="https://www.instagram.com/harshit_kumar_.11/" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+        </div>
+        <p class="footnote">&copy; Town-Sera 2026. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const $ = (id) => document.getElementById(id);
+        const phoneForm = $("phoneform"), otpForm = $("otpform"), success = $("success");
+        const phone = $("phone"), boxes = [...document.querySelectorAll("#otpboxes input")];
+        let timerId = null;
+
+        function show(step) {
+            [phoneForm, otpForm, success].forEach((s) => s.classList.remove("active"));
+            step.classList.add("active");
+        }
+
+        // Digits only in the phone field
+        phone.addEventListener("input", () => {
+            phone.value = phone.value.replace(/\D/g, "").slice(0, 10);
+            $("phoneerror").textContent = "";
+        });
+
+        function startTimer() {
+            let left = 30;
+            $("timer").textContent = left;
+            $("timertext").hidden = false;
+            $("resend").hidden = true;
+            clearInterval(timerId);
+            timerId = setInterval(() => {
+                left--;
+                $("timer").textContent = left;
+                if (left <= 0) {
+                    clearInterval(timerId);
+                    $("timertext").hidden = true;
+                    $("resend").hidden = false;
+                }
+            }, 1000);
+        }
+
+        // Step 1 -> 2
+        phoneForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const err = $("phoneerror");
+            if (!/^[6-9]\d{9}$/.test(phone.value)) {
+                err.textContent = "Enter a valid 10-digit Indian mobile number.";
+                return;
+            }
+            if (!$("agree").checked) {
+                err.textContent = "Please tick the box to receive an OTP.";
+                return;
+            }
+            // TODO: call your backend here to send the OTP (e.g. POST /api/send-otp)
+            $("sentto").textContent = "+91 " + phone.value.slice(0, 2) + "XXXXXX" + phone.value.slice(-2);
+            show(otpForm);
+            boxes.forEach((b) => (b.value = ""));
+            boxes[0].focus();
+            startTimer();
+        });
+
+        // OTP box behaviour: auto-advance, backspace, paste
+        boxes.forEach((box, i) => {
+            box.addEventListener("input", () => {
+                box.value = box.value.replace(/\D/g, "").slice(0, 1);
+                $("otperror").textContent = "";
+                if (box.value && i < boxes.length - 1) boxes[i + 1].focus();
+            });
+            box.addEventListener("keydown", (e) => {
+                if (e.key === "Backspace" && !box.value && i > 0) boxes[i - 1].focus();
+            });
+            box.addEventListener("paste", (e) => {
+                const text = (e.clipboardData.getData("text") || "").replace(/\D/g, "").slice(0, 6);
+                if (!text) return;
+                e.preventDefault();
+                [...text].forEach((d, k) => (boxes[k].value = d));
+                boxes[Math.min(text.length, 5)].focus();
+            });
+        });
+
+        // Step 2 -> 3
+        otpForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const code = boxes.map((b) => b.value).join("");
+            if (code.length !== 6) {
+                $("otperror").textContent = "Enter all 6 digits of the OTP.";
+                return;
+            }
+            // TODO: verify with your backend (e.g. POST /api/verify-otp { phone, code })
+            clearInterval(timerId);
+            show(success);
+            // setTimeout(() => (location.href = "dashboard.html"), 1500);
+        });
+
+        $("resend").addEventListener("click", () => {
+            // TODO: call your backend to resend the OTP
+            boxes.forEach((b) => (b.value = ""));
+            boxes[0].focus();
+            startTimer();
+        });
+
+        $("changenum").addEventListener("click", () => {
+            clearInterval(timerId);
+            show(phoneForm);
+            phone.focus();
+        });
+    </script>
+</body>
+</html>
