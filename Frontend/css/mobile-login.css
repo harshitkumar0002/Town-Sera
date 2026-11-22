@@ -1,0 +1,173 @@
+/* ===== Town-Sera : Mobile login (extends style.css) ===== */
+
+#mobilewrap {
+    max-width: 460px;
+    margin: 0 auto;
+}
+
+.backlink {
+    display: inline-block;
+    margin-bottom: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--brand-dark);
+}
+.backlink:hover { text-decoration: underline; }
+
+#mobilecard {
+    text-align: center;
+}
+
+/* Steps */
+.step { display: none; }
+.step.active {
+    display: grid;
+    gap: 14px;
+    animation: slidein 0.35s ease;
+}
+@keyframes slidein {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+#mobilecard h2 {
+    margin: 4px 0 0;
+    font-size: 26px;
+    color: var(--accent);
+}
+.sub {
+    margin: 0;
+    font-size: 15px;
+    color: var(--muted);
+}
+.sub strong { color: var(--ink); }
+
+#mobilecard .formlabel {
+    text-align: left;
+}
+
+/* Phone input */
+.phone-field {
+    display: flex;
+    align-items: stretch;
+    border: 1.5px solid var(--line);
+    border-radius: 12px;
+    background: var(--bg-soft);
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.phone-field:focus-within {
+    border-color: var(--brand);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(200, 119, 46, 0.18);
+}
+.phone-field .cc {
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    font-weight: 700;
+    color: var(--accent);
+    background: #f7e6cf;
+    border-right: 1.5px solid var(--line);
+}
+.phone-field input {
+    flex: 1;
+    min-width: 0;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+/* OTP boxes */
+.otp-boxes {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin: 8px 0 2px;
+}
+.otp-boxes input {
+    width: 100%;
+    aspect-ratio: 1 / 1.15;
+    padding: 0;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+    border: 1.5px solid var(--line);
+    border-radius: 12px;
+    background: var(--bg-soft);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+.otp-boxes input:focus {
+    outline: none;
+    border-color: var(--brand);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(200, 119, 46, 0.18);
+    transform: translateY(-2px);
+}
+
+/* Messages and small controls */
+.error {
+    min-height: 18px;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #c0392b;
+    text-align: left;
+}
+.otp-boxes + .error { text-align: center; }
+
+.agree { justify-content: flex-start; font-size: 14px; }
+
+.primary {
+    width: 100%;
+}
+
+.linkbtn {
+    padding: 0 4px;
+    font-size: inherit;
+    font-weight: 700;
+    color: var(--brand-dark);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.linkbtn:hover { text-decoration: underline; }
+
+.resend {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* Success */
+.tick {
+    width: 74px;
+    height: 74px;
+    margin: 6px auto 0;
+    display: grid;
+    place-items: center;
+    font-size: 38px;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(120deg, #4caf6a, #2e8b57);
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(46, 139, 87, 0.35);
+    animation: pop 0.45s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+@keyframes pop {
+    from { transform: scale(0.3); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+#mobilecard .signup-note { margin-top: 22px; }
+
+/* Small phones */
+@media (max-width: 420px) {
+    main { padding: 24px 4%; }
+    #mobilecard { padding: 24px 16px; }
+    .otp-boxes { gap: 6px; }
+    .otp-boxes input { font-size: 19px; }
+}
