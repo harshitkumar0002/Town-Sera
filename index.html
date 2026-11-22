@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Town-Sera - log in to track your study progress and manage your documents digitally.">
+    <title>Login | Town-Sera</title>
+    <link rel="stylesheet" href="Frontend/style.css">
+</head>
+<body>
+    <header>
+        <div id="headeritems">
+            <p>Login | Town-Sera</p>
+            <p id="itemcopyright">&copy; Town-Sera 2026</p>
+        </div>
+        <div id="headts">
+            <h1>Town-Sera</h1>
+            <h3>Manage Documents with Ease...</h3>
+        </div>
+    </header>
+
+    <main>
+        <div id="container">
+            <div id="loginpara">
+                <strong>Log in now...</strong>
+                Track your progress over your studies and manage your documents digitally, all in one place.
+                <ul class="features">
+                    <li>Notes, photos and videos in the cloud</li>
+                    <li>Track your study progress</li>
+                    <li>Message and share with ease</li>
+                </ul>
+            </div>
+
+            <fieldset>
+                <legend>Login Now</legend>
+                <form method="post" id="formitems">
+                    <label class="formlabel" for="username">Username
+                        <input type="text" id="username" name="username" placeholder="Enter username here..." autocomplete="username" required>
+                    </label>
+
+                    <label class="formlabel" for="password">Password
+                        <span class="pw-wrap">
+                            <input type="password" id="password" name="password" placeholder="Enter password here..." autocomplete="current-password" required>
+                            <button type="button" id="togglepw" aria-label="Show or hide password">Show</button>
+                        </span>
+                    </label>
+
+                    <div class="row">
+                        <label id="checkbox">
+                            <input type="checkbox" name="remember"> Remember me
+                        </label>
+                        <a href="#">Forgot password?</a>
+                    </div>
+
+                    <button type="submit">Log In</button>
+
+                    <div class="divider">or continue with</div>
+
+                    <div class="alt-login">
+                        <button type="button" class="alt-btn">Google</button>
+                        <button type="button" class="alt-btn">Mobile Number</button>
+                    </div>
+
+                    <p class="signup-note">New here? <a class="inline-link" href="Frontend/signup.html">Create an account</a></p>
+                </form>
+            </fieldset>
+        </div>
+    </main>
+
+    <footer>
+        <p>Discover for More</p>
+        <div id="footermenu">
+            <ul>
+                <li><a href="Frontend/signup.html">Sign Up</a></li>
+                <li><a href="Frontend/about.html">About Us</a></li>
+                <li><a href="Frontend/reportus.html">Report Us</a></li>
+            </ul>
+            <ul>
+                <li><a href="https://github.com/harshitverma21180002-gif" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="#">X / Twitter</a></li>
+                <li><a href="https://www.instagram.com/harshit_kumar_.11/" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+        </div>
+        <p class="footnote">&copy; Town-Sera 2026. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Show / hide password
+        const pw = document.getElementById("password");
+        const btn = document.getElementById("togglepw");
+        btn.addEventListener("click", () => {
+            const hidden = pw.type === "password";
+            pw.type = hidden ? "text" : "password";
+            btn.textContent = hidden ? "Hide" : "Show";
+        });
+    </script>
+</body>
+</html>
