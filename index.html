@@ -58,7 +58,7 @@
 
                     <div class="alt-login">
                         <button type="button" class="alt-btn">Google</button>
-                        <button type="button" class="alt-btn">Mobile Number</button>
+                        <button type="button" class="alt-btn" id="mobilelogin">Mobile Number</button>
                     </div>
 
                     <p class="signup-note">New here? <a class="inline-link" href="Frontend/signup.html">Create an account</a></p>
@@ -73,7 +73,7 @@
             <ul>
                 <li><a href="Frontend/signup.html">Sign Up</a></li>
                 <li><a href="Frontend/about.html">About Us</a></li>
-                <li><a href="Frontend/reportus.html">Report Us</a></li>
+                <li><a href="Frontend/reportus.html">Report Issue</a></li>
             </ul>
             <ul>
                 <li><a href="https://github.com/harshitkumar0002" target="_blank" rel="noopener">GitHub</a></li>
@@ -92,6 +92,11 @@
             const hidden = pw.type === "password";
             pw.type = hidden ? "text" : "password";
             btn.textContent = hidden ? "Hide" : "Show";
+        });
+
+        // Open mobile login page
+        document.getElementById("mobilelogin").addEventListener("click", () => {
+            window.location.href = "Frontend/mobile-login.html";
         });
     </script>
 </body>
